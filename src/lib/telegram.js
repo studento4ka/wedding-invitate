@@ -8,7 +8,7 @@ export async function sendTelegramNotification(data) {
   }
 
   // 1. Заголовок
-  const header = '🔔 <b>Нова відповідь на запрошення!</b> 💍';
+  const header = '🔔 <b>Нова відповідь на запрошення!</b>';
 
   // 2. Блок гостя
   const guestInfoLines = [

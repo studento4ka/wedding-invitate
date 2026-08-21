@@ -33,17 +33,17 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
-        className="relative z-10 pb-4 flex flex-col items-center gap-2"
+        className="relative z-10 pb-10 sm:pb-12 flex flex-col items-center gap-2"
       >
         {/* Імена */}
-        <h1 className="font-serif text-3xl sm:text-5xl text-[#2A2421] tracking-tight font-normal">
+        <h1 className="font-serif text-4xl sm:text-6xl text-[#2A2421] tracking-tight font-normal">
           Юра <span className="font-serif italic text-[#C58284] font-light">&</span> Іванка
         </h1>
 
         {/* Дата */}
         <div className="flex items-center justify-center gap-3 pt-1">
           <span className="h-[1px] w-8 bg-[#2A2421]/30" />
-          <p className="font-serif text-xs sm:text-sm tracking-[0.25em] text-[#556956] uppercase font-medium">
+          <p className="font-serif text-sm sm:text-base tracking-[0.25em] text-[#556956] uppercase font-medium">
             18 жовтня 2026 року
           </p>
           <span className="h-[1px] w-8 bg-[#2A2421]/30" />
