@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import Story from './components/Story';
 import Schedule from './components/Schedule';
 import DressCode from './components/DressCode';
+import MediaAlbum from './components/MediaAlbum';
 import RsvpForm from './components/RsvpForm';
 
 export default function App() {
