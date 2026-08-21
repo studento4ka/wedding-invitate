@@ -19,6 +19,7 @@ const timelineEvents = [
     location: "Свято-Покровський храм, с. Піддубці",
     icon: Church,
     color: "rose",
+    isMain: true,
   },
   {
     time: "13:00",
@@ -38,6 +39,7 @@ const timelineEvents = [
     title: "Святковий бенкет",
     icon: Utensils,
     color: "sage",
+    isMain: true,
   },
   {
     time: "17:00",
@@ -62,7 +64,7 @@ const locations = [
   },
   {
     title: "Ресторанний комплекс «Рестпарк»",
-    subtitle: "Збір гостей (13:00)",
+    subtitle: "Святковий бенкет (14:00)",
     address: "вул. Рівненська, 135, с. Струмівка, Волинська область",
     link: "https://www.google.com/maps/search/?api=1&query=Рестпарк+Струмівка",
   },
@@ -103,20 +105,32 @@ export default function Schedule() {
                 className="relative flex items-start group"
               >
                 {/* Кружечок на осі лінії */}
-                <div className={`absolute -left-[24px] top-0 w-8 h-8 rounded-full bg-[#FAF7F2] border-2 ${
-                  isRose ? 'border-[#C58284] text-[#C58284]' : 'border-[#556956] text-[#556956]'
-                } flex items-center justify-center shadow-sm z-10`}>
+                <div className={`absolute -left-[24px] top-0 w-8 h-8 rounded-full border-2 flex items-center justify-center z-10 ${
+                  item.isMain
+                    ? isRose 
+                      ? 'bg-gradient-to-tr from-[#C58284] to-[#E5AFA9] border-[#C58284] text-white shadow-md' 
+                      : 'bg-gradient-to-tr from-[#556956] to-[#8A9A86] border-[#556956] text-white shadow-md'
+                    : isRose 
+                      ? 'bg-[#FAF7F2] border-[#C58284] text-[#C58284] shadow-sm' 
+                      : 'bg-[#FAF7F2] border-[#556956] text-[#556956] shadow-sm'
+                }`}>
                   <Icon className="w-4 h-4" />
                 </div>
 
                 {/* Текст */}
                 <div className="pl-6">
                   <span className={`inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold font-sans mb-1 ${
-                    isRose ? 'bg-[#E5AFA9]/30 text-[#9A6B78]' : 'bg-[#8A9A86]/25 text-[#425343]'
+                    item.isMain
+                      ? isRose ? 'bg-[#C58284] text-white' : 'bg-[#556956] text-white'
+                      : isRose ? 'bg-[#E5AFA9]/30 text-[#9A6B78]' : 'bg-[#8A9A86]/25 text-[#425343]'
                   }`}>
                     {item.time}
                   </span>
-                  <h3 className="font-serif text-xl font-medium text-[#2A2421]">
+                  <h3 className={`font-serif font-medium ${
+                    item.isMain
+                      ? isRose ? 'text-2xl text-[#9A6B78] font-semibold' : 'text-2xl text-[#425343] font-semibold'
+                      : 'text-xl text-[#2A2421]'
+                  }`}>
                     {item.title}
                   </h3>
                   {item.location && (
