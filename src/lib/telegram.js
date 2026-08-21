@@ -18,6 +18,9 @@ export async function sendTelegramNotification(data) {
 
   if (data.isAttending === 'yes') {
     guestInfoLines.push(`👥 <b>Кількість гостей:</b> ${data.guestsCount}`);
+    if (data.transportHelp) {
+      guestInfoLines.push(`🚌 <b>Доїзд / трансфер:</b> ${data.transportHelp}`);
+    }
   }
   const guestBlock = guestInfoLines.join('\n');
 

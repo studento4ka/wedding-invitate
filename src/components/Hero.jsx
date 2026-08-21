@@ -1,85 +1,54 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
 import heroImg from '../assets/hero.jpg';
 
-export default function Hero({ 
-  names = "Юра та Іванка", 
-  location = "м. Луцьк" 
-}) {
+export default function Hero() {
   return (
-    <section className="relative h-screen w-full flex flex-col justify-between items-center text-center px-6 py-12 text-white overflow-hidden">
-      
-      {/* Фонове фото на весь екран з м'яким затемненням */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 scale-105 transition-transform duration-1000"
-        style={{ backgroundImage: `url(${heroImg})` }}
+    <section className="relative w-full min-h-screen flex flex-col items-center justify-between text-center px-4 pt-10 pb-10 overflow-hidden bg-[#FAF7F2]">
+      {/* Фонове фото на весь екран */}
+      <img
+        src={heroImg}
+        alt="Юра та Іванка"
+        className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
       />
-      <div className="absolute inset-0 bg-black/35 backdrop-blur-[0.5px] z-0" />
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#FAF7F2] to-transparent z-0" />
 
-      {/* Верхня позначка */}
+      {/* М'яке затемнення зверху та висвітлення знизу в колір сайту */}
+      <div className="absolute inset-0 bg-black/15 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent via-40% to-[#FAF7F2] pointer-events-none" />
+
+      {/* Верхній блок: Тільки заголовок запрошення */}
       <motion.div
         initial={{ opacity: 0, y: -15 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="relative z-10 text-[11px] uppercase tracking-[0.35em] font-sans font-light text-white/90"
+        transition={{ duration: 0.9, ease: 'easeOut' }}
+        className="relative z-10 pt-4 sm:pt-6"
       >
-        Запрошення на весілля
+        <span className="text-[11px] sm:text-xs tracking-[0.4em] uppercase text-white/90 font-sans font-medium drop-shadow-md">
+          Запрошення на весілля
+        </span>
       </motion.div>
 
-      {/* Центральний блок: Імена рукописним шрифтом + Велика дата */}
-      <div className="relative z-10 my-auto w-full max-w-xs flex flex-col items-center">
-        
-        {/* Рукописні витончені імена */}
-        <motion.h1
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.9, delay: 0.2 }}
-          className="font-serif italic text-5xl sm:text-6xl text-white drop-shadow-md tracking-normal mb-8"
-        >
-          {names}
-        </motion.h1>
-
-        {/* Блок дати: Вересень | 18 | 2026 */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="w-full flex items-center justify-between gap-2 border-t border-b border-white/60 py-3 px-2 text-white"
-        >
-          <span className="font-serif text-sm tracking-widest lowercase text-white/90">
-            жовтень
-          </span>
-
-          <span className="font-serif text-5xl sm:text-6xl font-light leading-none text-white px-2">
-            18
-          </span>
-
-          <span className="font-serif text-sm tracking-widest text-white/90">
-            2026
-          </span>
-        </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-xs uppercase tracking-[0.25em] text-white/80 font-sans mt-4"
-        >
-          {location}
-        </motion.p>
-      </div>
-
-      {/* Стрілочка скролу */}
+      {/* Нижній блок: Імена та Дата на світлому фоні */}
       <motion.div
-        animate={{ y: [0, 6, 0] }}
-        transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-        className="relative z-10 flex flex-col items-center text-[#556956] text-[10px] tracking-[0.25em] uppercase font-sans font-medium"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
+        className="relative z-10 pb-4 flex flex-col items-center gap-2"
       >
-        <ChevronDown className="w-5 h-5 text-[#FAF7F2] drop-shadow-md" />
-      </motion.div>
+        {/* Імена */}
+        <h1 className="font-serif text-3xl sm:text-5xl text-[#2A2421] tracking-tight font-normal">
+          Юра <span className="font-serif italic text-[#C58284] font-light">&</span> Іванка
+        </h1>
 
+        {/* Дата */}
+        <div className="flex items-center justify-center gap-3 pt-1">
+          <span className="h-[1px] w-8 bg-[#2A2421]/30" />
+          <p className="font-serif text-xs sm:text-sm tracking-[0.25em] text-[#556956] uppercase font-medium">
+            18 жовтня 2026 року
+          </p>
+          <span className="h-[1px] w-8 bg-[#2A2421]/30" />
+        </div>
+      </motion.div>
     </section>
   );
 }

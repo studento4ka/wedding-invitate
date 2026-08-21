@@ -5,6 +5,8 @@ import Schedule from './components/Schedule';
 import DressCode from './components/DressCode';
 import MediaAlbum from './components/MediaAlbum';
 import RsvpForm from './components/RsvpForm';
+import ChildhoodPhoto from './components/ChildhoodPhoto';
+
 
 export default function App() {
   return (
@@ -22,8 +24,11 @@ export default function App() {
         {/* Історія та теплі слова */}
         <Story />
 
+        <ChildhoodPhoto />
+
         {/* Розклад дня та локації на карті */}
         <Schedule />
+
 
         {/* Текстурний Дрес-код */}
         <DressCode />

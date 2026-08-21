@@ -79,9 +79,6 @@ export default function Schedule() {
         transition={{ duration: 0.7 }}
         className="text-center mb-12"
       >
-        <span className="text-xs uppercase tracking-[0.25em] text-[#556956] font-semibold font-sans">
-          Програма свята
-        </span>
         <h2 className="font-serif text-3xl sm:text-4xl text-[#2A2421] mt-1">
           Розклад дня
         </h2>
@@ -159,9 +156,6 @@ export default function Schedule() {
         className="space-y-4 max-w-sm mx-auto"
       >
         <div className="text-center mb-6">
-          <span className="text-xs uppercase tracking-[0.25em] text-[#C58284] font-semibold font-sans">
-            Як доїхати
-          </span>
           <h3 className="font-serif text-2xl text-[#2A2421] mt-1">
             Локації весілля
           </h3>
