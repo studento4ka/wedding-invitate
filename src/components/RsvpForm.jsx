@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, CheckCircle2, Minus, Plus, Bus } from 'lucide-react';
+import { Send, CheckCircle2, Minus, Plus } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { supabase } from '../lib/supabaseClient';
 import { sendTelegramNotification } from '../lib/telegram';
@@ -19,9 +19,8 @@ export default function RsvpForm() {
   const [error, setError] = useState(null);
 
   const transportOptions = [
-    'Так, потрібен автобус',
+    'Так',
     'Ні, доберемося самостійно',
-    'Я (ми) зі сторони нареченого',
   ];
 
   const handleCountChange = (value) => {
@@ -166,7 +165,7 @@ export default function RsvpForm() {
                 {/* Кількість персон */}
                 <div>
                   <label className="block text-xs font-medium text-[#2A2421] mb-1.5 font-sans">
-                    Скільки гостей буде з вами (включно з вами)?
+                    Скільки гостей буде включно з вами ?
                   </label>
                   <div className="flex items-center gap-3">
                     <button
@@ -203,7 +202,7 @@ export default function RsvpForm() {
                 {/* Допомога з доїздом */}
                 <div>
                   <label className="block text-xs font-medium text-[#2A2421] mb-2 font-sans">
-                    Чи потрібно вам допомогти з доїздом (для гостей нареченої)? *
+                    Чи потрібно вам допомогти з доїздом ? *
                   </label>
                   <div className="flex flex-col gap-2">
                     {transportOptions.map((opt) => {
