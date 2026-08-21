@@ -27,6 +27,8 @@ export default function App() {
         {/* Текстурний Дрес-код */}
         <DressCode />
 
+        <MediaAlbum />
+
         {/* Форма присутності (RSVP) */}
         <RsvpForm />
         

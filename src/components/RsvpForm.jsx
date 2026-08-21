@@ -82,7 +82,7 @@ export default function RsvpForm() {
             Анкета гостя
           </h2>
           <p className="text-xs text-[#556956] mt-2 font-sans font-medium">
-            Будь ласка, заповніть форму до 15 жовтня 2026 року
+            Будь ласка, заповніть форму до 1 жовтня 2026 року
           </p>
         </div>
 
