@@ -116,7 +116,7 @@ export default function RsvpForm() {
             {/* Ім'я */}
             <div>
               <label className="block text-xs font-medium text-[#2A2421] mb-1 font-sans">
-                Ваше ім'я та прізвище (або пари / родини) *
+                Ваше ім'я та прізвище (або пари / родини)
               </label>
               <input
                 required
@@ -131,7 +131,7 @@ export default function RsvpForm() {
             {/* Присутність */}
             <div>
               <label className="block text-xs font-medium text-[#2A2421] mb-2 font-sans">
-                Чи зможете розділити з нами цей день? *
+                Чи зможете розділити з нами цей день?
               </label>
               <div className="grid grid-cols-2 gap-2">
                 <button
@@ -202,7 +202,7 @@ export default function RsvpForm() {
                 {/* Допомога з доїздом */}
                 <div>
                   <label className="block text-xs font-medium text-[#2A2421] mb-2 font-sans">
-                    Чи потрібно вам допомогти з доїздом ? *
+                    Чи потрібно вам допомогти з доїздом ?
                   </label>
                   <div className="flex flex-col gap-2">
                     {transportOptions.map((opt) => {
