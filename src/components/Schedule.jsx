@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
+  Car,
   Church, 
   GlassWater, 
   Sparkles, 
@@ -13,6 +14,13 @@ import {
 } from 'lucide-react';
 
 const timelineEvents = [
+  {
+    time: "09:00",
+    title: "Виїзд з дому нареченої",
+    location: "с. Крушинець",
+    icon: Car,
+    color: "sage",
+  },
   {
     time: "12:00",
     title: "Вінчання",
